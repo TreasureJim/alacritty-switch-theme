@@ -12,7 +12,8 @@ Your Alacritty configuration file exists at `~/.config/alacritty/alacritty.toml`
 
 ## Installation
 
-Add `alacritty-switch-theme` to path. Move `alacritty-switch-theme.fish` to `~/.config/fish/completions`
+Mark `alacritty-switch-theme` as executable with `chmod +x alacritty-switch-theme` then add it to path. 
+Move `alacritty-switch-theme.fish` to `~/.config/fish/completions`
 
 ## Usage
 
