@@ -1,0 +1,33 @@
+#!/bin/bash
+
+config_file="~/.config/alacritty/alacritty.toml"
+config_file=$(eval echo $config_file)
+
+if [ ! -e $config_file ]; then
+    echo "Config file: $config_file not found."
+fi
+
+theme_path="$1"
+
+# Check if an argument is provided
+if [ -z "$theme_path" ]; then
+    grep "\".*themes/.*.toml\"," $config_file | awk -F'"' '{print $2}'
+    # echo "Usage: $0 <theme_path>"
+    exit 1
+fi
+
+theme_path=$(eval echo $theme_path)
+
+# Check if the file exists
+if [ ! -e "$theme_path" ]; then
+    echo "Error: File $theme_path not found."
+    exit 1
+fi
+
+# Check if the file has a ".toml" extension
+if [[ "$theme_path" != *.toml ]]; then
+    echo "Error: File $theme_path is not a TOML file."
+    exit 1
+fi
+
+sed -i "s|.*/theme.*.toml.*|\t\"$theme_path\",|g" $config_file
