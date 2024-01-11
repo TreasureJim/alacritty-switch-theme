@@ -39,7 +39,7 @@ For improved usability, the script supports autocomplete for theme paths. Simply
 
 Autocomplete will show all files in `~/.config/alacritty/themes`.
 
-**NOTE: ** Autocomplete requires a fish shell to work. 
+**NOTE:** Autocomplete requires a fish shell to work. 
 
 ## Important Notes
 
